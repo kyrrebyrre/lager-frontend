@@ -1,8 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+
+  useEffect(() => {
+    // Redirect to login page
+    router.push('/auth/login')
+  }, [router])
+
+  return null
+}
+
+function InvitePage() {
   const [formData, setFormData] = useState({
     full_name: '',
     phone: '',
